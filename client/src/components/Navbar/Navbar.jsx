@@ -1,6 +1,8 @@
 import React from "react";
 
 const Navbar = () => {
+  const menuItems = ["Home", "Collection", "About", "Contact"];
+
   return (
     <nav
       style={{ fontFamily: `"Courgette", cursive` }}
@@ -10,6 +12,14 @@ const Navbar = () => {
         <h1 className="text-xl font-bold">
           shopWease<span className="text-orange-600">.</span>
         </h1>
+      </div>
+
+      <div id="nav-menu">
+        <ul>
+          {menuItems.map((menu, index) => (
+            <li key={index}>{menu}</li>
+          ))}
+        </ul>
       </div>
     </nav>
   );
