@@ -20,7 +20,12 @@ const Navbar = () => {
         {/* {Seach Bar} */}
         <SearchBar />
 
-        <div id="nav-btn">
+        <div id="nav-btn" className="flex items-center justify-center gap-8">
+          <div className="favourite-Btn">
+            <i className="fa-regular fa-heart"></i>
+            <p classsName="text-xs text-slate-600">Favourite</p>
+          </div>
+
           <ProfileCard />
         </div>
       </div>
