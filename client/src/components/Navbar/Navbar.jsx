@@ -1,15 +1,16 @@
 import React from "react";
 import SearchBar from "../Searchbar/SearchBar";
 import ProfileCard from "../ProfileCard/ProfileCard";
+import "./menuItems.css";
 
 const Navbar = () => {
   const menuItems = ["Home", "Collection", "About", "Contact"];
 
   return (
-    <nav className="border-2 w-full py-3 px-4">
+    <nav className="w-full py-3 px-4 sticky top-0 left-0 z-50 bg-white">
       <div
         id="nav-upperSeaction-wrapper"
-        className="flex items-center justify-between border-b-2 pb-3"
+        className="flex items-center justify-between pb-3"
       >
         <div id="nav-head" style={{ fontFamily: `"Courgette", cursive` }}>
           <h1 className="text-xl font-bold cursor-pointer">
@@ -23,16 +24,16 @@ const Navbar = () => {
         <div id="nav-btn" className="flex items-center justify-center gap-8">
           <div
             id="cart-Btn"
-            className="flex flex-col items-center justify-center cursor-pointer"
+            className="flex flex-col items-center justify-center cursor-pointer group"
           >
-            <i className="fa-regular fa-envelope text-lg leading-3 hover:text-green-500"></i>
+            <i className="fa-regular fa-envelope text-lg leading-3 group-hover:text-green-500"></i>
             <span className="text-xs text-slate-700">Cart</span>
           </div>
           <div
             id="favourite-Btn"
-            className="flex flex-col items-center justify-center cursor-pointer"
+            className="flex flex-col items-center justify-center cursor-pointer group"
           >
-            <i className="fa-regular fa-heart text-lg leading-3 hover:text-red-500"></i>
+            <i className="fa-regular fa-heart text-lg leading-3 group-hover:text-red-500"></i>
             <span className="text-xs text-slate-700">Favourite</span>
           </div>
 
@@ -40,11 +41,16 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div id="nav-lowerSeaction-wrapper">
+      <div
+        id="nav-lowerSeaction-wrapper"
+        className="w-full flex items-center justify-start border-b-2 pb-3"
+      >
         <div id="nav-menu" style={{ fontFamily: `"Roboto", sans-serif` }}>
-          <ul className="flex items-center justify-center gap-5">
+          <ul className="flex items-center justify-center gap-8">
             {menuItems.map((menu, index) => (
-              <li key={index}>{menu}</li>
+              <li key={index} className="cursor-pointer">
+                {menu}
+              </li>
             ))}
           </ul>
         </div>
