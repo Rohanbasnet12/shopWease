@@ -4,22 +4,24 @@ const Navbar = () => {
   const menuItems = ["Home", "Collection", "About", "Contact"];
 
   return (
-    <nav
-      style={{ fontFamily: `"Courgette", cursive` }}
-      className="border-2 w-full"
-    >
-      <div id="nav-head">
-        <h1 className="text-xl font-bold">
+    <nav className="border-2 w-full flex items-center justify-between py-3 px-4">
+      <div id="nav-head" style={{ fontFamily: `"Courgette", cursive` }}>
+        <h1 className="text-xl font-bold cursor-pointer">
           shopWease<span className="text-orange-600">.</span>
         </h1>
       </div>
 
-      <div id="nav-menu">
-        <ul>
+      <div id="nav-menu" style={{ fontFamily: `"Roboto", sans-serif` }}>
+        <ul className="flex items-center justify-center gap-4">
           {menuItems.map((menu, index) => (
             <li key={index}>{menu}</li>
           ))}
         </ul>
+      </div>
+
+      <div id="nav-btn">
+        <button>Admin</button>
+        <button>Login</button>
       </div>
     </nav>
   );
