@@ -21,9 +21,19 @@ const Navbar = () => {
         <SearchBar />
 
         <div id="nav-btn" className="flex items-center justify-center gap-8">
-          <div className="favourite-Btn">
-            <i className="fa-regular fa-heart"></i>
-            <p classsName="text-xs text-slate-600">Favourite</p>
+          <div
+            id="cart-Btn"
+            className="flex flex-col items-center justify-center cursor-pointer"
+          >
+            <i className="fa-regular fa-envelope text-lg leading-3 hover:text-green-500"></i>
+            <span className="text-xs text-slate-700">Cart</span>
+          </div>
+          <div
+            id="favourite-Btn"
+            className="flex flex-col items-center justify-center cursor-pointer"
+          >
+            <i className="fa-regular fa-heart text-lg leading-3 hover:text-red-500"></i>
+            <span className="text-xs text-slate-700">Favourite</span>
           </div>
 
           <ProfileCard />
