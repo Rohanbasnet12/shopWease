@@ -4,10 +4,10 @@ import Home from "./Pages/Home/Home";
 
 function App() {
   return (
-    <>
+    <div id="app">
       <Navbar />
       <Home />
-    </>
+    </div>
   );
 }
 
