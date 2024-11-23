@@ -1,7 +1,7 @@
 import React from "react";
-import SearchBar from "../SearchBar";
-import ProfileCard from "../ProfileCard";
-import "./menuItems.css";
+import SearchBar from "./SearchBar";
+import ProfileCard from "./ProfileCard";
+import "../styles/MenuItems.css";
 
 const Navbar = () => {
   const menuItems = ["Home", "Collection", "About", "Contact"];
