@@ -7,7 +7,7 @@ const Navbar = () => {
   const menuItems = ["Home", "Collection", "About", "Contact"];
 
   return (
-    <nav className="w-full py-3 px-4 sticky top-0 left-0 z-50 bg-white">
+    <nav className="w-full py-3 px-4 sticky top-0 left-0 z-50 bg-[#B6A28E]/20 shadow-xl">
       <div
         id="nav-upperSeaction-wrapper"
         className="flex items-center justify-between pb-3"
@@ -43,7 +43,7 @@ const Navbar = () => {
 
       <div
         id="nav-lowerSeaction-wrapper"
-        className="w-full flex items-center justify-start border-b-2 pb-3"
+        className="w-full flex items-center justify-start pb-3"
       >
         <div id="nav-menu" style={{ fontFamily: `"Roboto", sans-serif` }}>
           <ul className="flex items-center justify-center gap-8">
