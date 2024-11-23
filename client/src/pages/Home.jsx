@@ -1,5 +1,5 @@
 import React from "react";
-import homeIMG from "../../assets/homeIMG.jpeg";
+import homeIMG from "../assets/homeIMG.jpeg";
 
 const Home = () => {
   return (
@@ -9,7 +9,7 @@ const Home = () => {
       style={{ fontFamily: `"Roboto", sans-serif` }}
     >
       <div className="home-wrapper container mx-auto pt-20">
-        <div id="img_wrapper" className="border-2 rounded-xl">
+        <div id="img_wrapper" className="border-2 rounded-xl overflow-hidden">
           <img src={homeIMG} alt="Home image" />
         </div>
         {/* Button */}
