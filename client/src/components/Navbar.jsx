@@ -2,9 +2,10 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import ProfileCard from "./ProfileCard";
 import "../styles/MenuItems.css";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const menuItems = ["Home", "Collection", "About", "Contact"];
+  const menuItems = ["Home", "Collections", "About", "Contact"];
 
   return (
     <header>
@@ -55,9 +56,13 @@ const Navbar = () => {
           <div id="nav-menu" style={{ fontFamily: `"Roboto", sans-serif` }}>
             <ul className="flex items-center justify-center gap-8">
               {menuItems.map((menu, index) => (
-                <li key={index} className="cursor-pointer">
-                  {menu}
-                </li>
+                <NavLink
+                  key={index}
+                  to={menu === "Home" ? "/" : `/${menu.toLowerCase()}`}
+                  className="cursor-pointer"
+                >
+                  <li>{menu}</li>
+                </NavLink>
               ))}
             </ul>
           </div>

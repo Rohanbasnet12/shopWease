@@ -33,7 +33,7 @@
   height: 2px;
   background-color: orangered;
   position: absolute;
-  bottom: 0;
+  bottom: 22%;
   left: 0;
   transform: scaleX(1); /* Ensure it's fully visible */
 }
