@@ -61,7 +61,7 @@ const Navbar = () => {
                   to={menu === "Home" ? "/" : `/${menu.toLowerCase()}`}
                   className="cursor-pointer"
                 >
-                  <li>{menu}</li>
+                  <li className="uppercase">{menu}</li>
                 </NavLink>
               ))}
             </ul>
