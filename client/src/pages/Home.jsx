@@ -18,21 +18,28 @@ const Home = () => {
           />
         </div>
 
-        <div className="info-wrapper w-full lg:px-10 md:p-6 xl:px-12 p-3 flex justify-between items-center absolute bottom-6">
-          {/* <div className="block">
-            <p className="text-white font-bold text-4xl uppercase w-full">
+        <div className="info-wrapper w-full lg:px-10 md:p-6 xl:px-12 p-3 flex justify-between items-center absolute bottom-4">
+          <div className="flex flex-col w-full gap-3">
+            <p className="text-white font-bold text-4xl uppercase">
               shopWease Spring Collections
             </p>
-            <div className="flex flex-col justify-between">
-              <span className="text-xm text-slate-300 font-thin">
-                Find out best spring collection. Offering our best quality
-                production.
-              </span>
+
+            <div className="flex items-center justify-between">
+              <div className="flex flex-col items-start">
+                <span className="text-xm text-slate-100 font-thin">
+                  Find out best spring collection. Offering our best quality
+                  production.
+                </span>
+                <span className="text-xm text-slate-100 font-thin">
+                  Only at shopWease
+                </span>
+              </div>
+
               <button className="border bg-white rounded-3xl px-6 py-2 text-md font-medium shadow-lg hover:bg-[#E07B39] hover:text-white transition-all">
                 Buy Now
               </button>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
