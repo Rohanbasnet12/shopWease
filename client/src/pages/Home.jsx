@@ -1,5 +1,5 @@
 import React from "react";
-import homeImg from "../assets/homeImg.webp";
+import homeImg from "../assets/homeImg.png";
 
 const Home = () => {
   return (
@@ -14,7 +14,7 @@ const Home = () => {
           <img
             src={homeImg}
             alt="Background Home Image"
-            className="w-full h-full object-cover scale-x-150"
+            className="w-full h-full object-cover scale-x-110"
           />
         </div>
 
