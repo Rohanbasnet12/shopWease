@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import ProfileCard from "./ProfileCard";
 import "../styles/MenuItems.css";
 import { NavLink } from "react-router-dom";
 import CartImg from "../assets/frontend_assets/cart_icon.png";
+import hamBtn from "../assets/frontend_assets/menu_icon.png";
 
 const Navbar = () => {
   const menuItems = ["Home", "Collections", "About", "Contact"];
+  const [visible, setVisible] = useState(false);
 
   return (
     <header>
@@ -43,6 +45,17 @@ const Navbar = () => {
 
             <ProfileCard />
           </div>
+
+          <div className="ham-btn sm:hidden">
+            <img
+              src={hamBtn}
+              alt="ham burger icon"
+              className="w-5 cursor-pointer"
+              onClick={() => {
+                setVisible(true);
+              }}
+            />
+          </div>
         </div>
 
         <div
@@ -62,6 +75,25 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
+        </div>
+
+        {/* Side bar for smaller screens  */}
+        <div
+          className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${
+            visible ? "w-full" : "w-0"
+          }`}
+        >
+          {/* <div className="close-btn">
+            <span>
+              <i
+                className="fa-solid fa-chevron-up -rotate-90 text-xl text-slate-500 rounded-full flex items-center justify-center m-4 hover:text-slate-950 cursor-pointer"
+                onClick={() => {
+                  setVisible(false);
+                }}
+              />
+              Back
+            </span>
+          </div> */}
         </div>
       </nav>
     </header>
