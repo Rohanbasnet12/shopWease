@@ -26,10 +26,13 @@ const Navbar = () => {
           <div id="nav-btn" className="flex items-center justify-center gap-8">
             <div
               id="cart-Btn"
-              className="flex flex-col items-center justify-center cursor-pointer group"
+              className="flex flex-col items-center justify-center cursor-pointer group relative"
             >
+              <span className="text-[8px] absolute -top-[8px] -right-[7px] text-white bg-slate-900 flex items-center justify-center rounded-full w-4 h-4">
+                10
+              </span>
               <i
-                className="fa-regular fa-envelope text-lg leading-3 group-hover:text-green-500 "
+                className="fa-solid fa-bag-shopping text-lg leading-3 group-hover:text-green-500 "
                 aria-label="Cart"
               ></i>
               <span className="text-xs text-slate-700">Cart</span>
