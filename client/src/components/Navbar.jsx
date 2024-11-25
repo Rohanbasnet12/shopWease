@@ -3,6 +3,7 @@ import SearchBar from "./SearchBar";
 import ProfileCard from "./ProfileCard";
 import "../styles/MenuItems.css";
 import { NavLink } from "react-router-dom";
+import CartImg from "../assets/frontend_assets/cart_icon.png";
 
 const Navbar = () => {
   const menuItems = ["Home", "Collections", "About", "Contact"];
@@ -28,24 +29,16 @@ const Navbar = () => {
               id="cart-Btn"
               className="flex flex-col items-center justify-center cursor-pointer group relative"
             >
-              <span className="text-[8px] absolute -top-[8px] -right-[7px] text-white bg-slate-900 flex items-center justify-center rounded-full w-4 h-4">
+              <span className="text-[8px] absolute -top-[4px] -right-[7px] text-white bg-slate-900 flex items-center justify-center rounded-full w-4 h-4">
                 10
               </span>
-              <i
-                className="fa-solid fa-bag-shopping text-lg leading-3 group-hover:text-green-500 "
+              <img
+                src={CartImg}
+                alt="Card Image"
                 aria-label="Cart"
-              ></i>
+                className="leading-3 group-hover:text-green-500 w-5 h-5"
+              />
               <span className="text-xs text-slate-700">Cart</span>
-            </div>
-            <div
-              id="favourite-Btn"
-              className="flex flex-col items-center justify-center cursor-pointer group"
-            >
-              <i
-                className="fa-regular fa-heart text-lg leading-3 group-hover:text-red-500"
-                aria-label="Favourite"
-              ></i>
-              <span className="text-xs text-slate-700">Favourite</span>
             </div>
 
             <ProfileCard />
