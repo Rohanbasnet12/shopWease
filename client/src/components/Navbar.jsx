@@ -79,21 +79,21 @@ const Navbar = () => {
 
         {/* Side bar for smaller screens  */}
         <div
-          className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${
-            visible ? "w-full" : "w-0"
+          className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ease-out ${
+            visible ? "w-full h-[100vh]" : "w-0"
           }`}
         >
-          {/* <div className="close-btn">
-            <span>
-              <i
-                className="fa-solid fa-chevron-up -rotate-90 text-xl text-slate-500 rounded-full flex items-center justify-center m-4 hover:text-slate-950 cursor-pointer"
-                onClick={() => {
-                  setVisible(false);
-                }}
-              />
+          <div className="close-btn">
+            <span
+              className="inline-block m-4 cursor-pointer text-xl font-medium text-slate-600 hover:text-slate-950"
+              onClick={() => {
+                setVisible(false);
+              }}
+            >
+              <i className="fa-solid fa-chevron-up -rotate-90" />
               Back
             </span>
-          </div> */}
+          </div>
         </div>
       </nav>
     </header>
