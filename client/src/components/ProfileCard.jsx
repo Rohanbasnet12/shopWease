@@ -13,7 +13,7 @@ const ProfileCard = () => {
       </div>
       <div
         id="dropDown_wrapper"
-        className="absolute mt-4 bg-gray-200 right-0 rounded-md w-40 py-2 px-3 flex flex-col gap-3"
+        className="absolute mt-4 bg-gray-200 right-0 rounded-md w-40 py-2 px-3 flex flex-col gap-3 z-[99]"
       >
         <h2 className="border-b border-b-gray-950 pb-2 font-medium text-lg">
           TestUser

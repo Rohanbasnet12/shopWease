@@ -62,7 +62,11 @@ const Navbar = () => {
           id="nav-lowerSeaction-wrapper"
           className="w-full flex items-center justify-start pb-3"
         >
-          <div id="nav-menu" style={{ fontFamily: `"Roboto", sans-serif` }}>
+          <div
+            id="nav-menu"
+            style={{ fontFamily: `"Roboto", sans-serif` }}
+            className="hidden sm:flex lg:flex md:flex xl:flex"
+          >
             <ul className="flex items-center justify-center gap-8">
               {menuItems.map((menu, index) => (
                 <NavLink
@@ -90,9 +94,23 @@ const Navbar = () => {
                 setVisible(false);
               }}
             >
-              <i className="fa-solid fa-chevron-up -rotate-90" />
+              <i className="fa-solid fa-chevron-up -rotate-90 px-3" />
               Back
             </span>
+          </div>
+
+          <div className="menu-items-smallerWidth">
+            <ul className="flex flex-col items-start gap-4">
+              {menuItems.map((menu, index) => (
+                <NavLink
+                  key={index}
+                  to={menu === "Home" ? "/" : `/${menu.toLowerCase()}`}
+                  className="cursor-pointer m-4"
+                >
+                  <li className="uppercase">{menu}</li>
+                </NavLink>
+              ))}
+            </ul>
           </div>
         </div>
       </nav>
