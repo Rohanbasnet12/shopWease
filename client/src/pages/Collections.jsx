@@ -1,14 +1,15 @@
 import React from "react";
+import Title from "../components/Title";
 
 const Collections = () => {
   return (
     <div>
-      <h1>
-        <span>LATEST</span> Collections{" "}
-        <span>
-          <i className="fa-solid fa-minus text-black"></i>
-        </span>
-      </h1>
+      <Title
+        title={"LATEST COLLECTIONS"}
+        description={
+          "Discover our latest collections featuring trendy designs, quality craftsmanship, and timeless styles to elevate your wardrobe effortlessly."
+        }
+      />
     </div>
   );
 };

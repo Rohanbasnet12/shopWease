@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Title from "./Title";
+import { ShopContext } from "../context/ShopContext";
 
 const LatestCollection = () => {
+  const { products } = useContext(ShopContext);
+
   return (
     <div>
       <Title
