@@ -4,7 +4,7 @@ const Title = ({ title, description }) => {
   return (
     <div
       id="title"
-      className="my-8"
+      className="my-10"
       style={{ fontFamily: `"Roboto", sans-serif` }}
     >
       <h1
