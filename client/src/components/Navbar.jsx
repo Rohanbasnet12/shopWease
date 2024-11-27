@@ -112,6 +112,9 @@ const Navbar = () => {
                   key={index}
                   to={menu === "Home" ? "/" : `/${menu.toLowerCase()}`}
                   className="cursor-pointer"
+                  onClick={() => {
+                    setVisible(false);
+                  }}
                 >
                   <li className="uppercase">{menu}</li>
                 </NavLink>
