@@ -1,11 +1,12 @@
 import React from "react";
-import homeImg from "../assets/homeImg.png";
 import Hero from "../components/Hero";
+import LatestCollection from "../components/LatestCollection";
 
 const Home = () => {
   return (
     <div id="home">
       <Hero />
+      <LatestCollection />
     </div>
   );
 };
