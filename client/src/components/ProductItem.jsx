@@ -17,10 +17,15 @@ const ProductItem = ({ id, image, name, price }) => {
           className="hover:scale-110 transition ease-out rounded-tl-md rounded-tr-md"
         />
       </div>
-      <p>{name}</p>
-      <span>
-        {currency} {price}
-      </span>
+      <div
+        id="product-description"
+        className="flex flex-col items-start justify-between pt-4"
+      >
+        <p className="text-md font-bold leading-4">{name}</p>
+        <span className="pt-2 text-sm font-medium">
+          {currency} {price}
+        </span>
+      </div>
     </Link>
   );
 };
