@@ -1,5 +1,6 @@
 import React from "react";
 import homeImg from "../assets/homeImg.png";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -35,9 +36,12 @@ const Hero = () => {
                 </span>
               </div>
 
-              <button className="border bg-white rounded-3xl px-6 py-2 text-md font-medium shadow-lg hover:bg-[#E07B39] hover:text-white transition-all">
+              <Link
+                to="/collections"
+                className="border bg-white rounded-3xl px-6 py-2 text-md font-medium shadow-lg hover:bg-[#E07B39] hover:text-white transition-all"
+              >
                 Buy Now
-              </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -70,7 +70,7 @@ const Navbar = () => {
                 visible ? "w-full h-[100vh]" : "w-0"
               }`}
             >
-              <Link to="/collections" className="close-btn">
+              <div className="close-btn">
                 <span
                   className="inline-block m-4 cursor-pointer text-xl font-medium text-slate-600 hover:text-slate-950"
                   onClick={() => {
@@ -80,7 +80,7 @@ const Navbar = () => {
                   <i className="fa-solid fa-chevron-up -rotate-90 px-3" />
                   Back
                 </span>
-              </Link>
+              </div>
 
               <div className="menu-items-smallerWidth">
                 <ul className="flex flex-col items-start gap-4">
