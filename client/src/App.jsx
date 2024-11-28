@@ -1,5 +1,4 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Collections from "./pages/Collections";
 import About from "./pages/About";
@@ -15,7 +14,6 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div id="app">
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/collections" element={<Collections />} />

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import ProfileCard from "./ProfileCard";
 import "../styles/MenuItems.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import CartImg from "../assets/frontend_assets/cart_icon.png";
 import hamBtn from "../assets/frontend_assets/menu_icon.png";
 
@@ -18,9 +18,11 @@ const Navbar = () => {
           className="flex items-center justify-between pb-3"
         >
           <div id="nav-head" style={{ fontFamily: "Courgette, cursive" }}>
-            <h1 className="text-xl font-bold cursor-pointer">
-              shopWease<span className="text-orange-600">.</span>
-            </h1>
+            <Link to="/">
+              <h1 className="text-xl font-bold cursor-pointer">
+                shopWease<span className="text-orange-600">.</span>
+              </h1>
+            </Link>
           </div>
 
           {/* Search Bar */}
@@ -68,7 +70,7 @@ const Navbar = () => {
                 visible ? "w-full h-[100vh]" : "w-0"
               }`}
             >
-              <div className="close-btn">
+              <Link to="/collections" className="close-btn">
                 <span
                   className="inline-block m-4 cursor-pointer text-xl font-medium text-slate-600 hover:text-slate-950"
                   onClick={() => {
@@ -78,7 +80,7 @@ const Navbar = () => {
                   <i className="fa-solid fa-chevron-up -rotate-90 px-3" />
                   Back
                 </span>
-              </div>
+              </Link>
 
               <div className="menu-items-smallerWidth">
                 <ul className="flex flex-col items-start gap-4">
