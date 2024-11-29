@@ -10,35 +10,34 @@
 #nav-menu li::after,
 .menu-items-smallerWidth li::after {
   content: "";
-  width: 100%; /* Match underline width to text width */
+  width: 100%;
   height: 2px;
   background-color: orangered;
   position: absolute;
   bottom: 0;
   left: 0;
-  transform: scaleX(0); /* Start with no underline */
-  transform-origin: left; /* Animate from left to right */
-  transition: transform 0.2s ease; /* Smooth animation */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
 }
 
 #nav-menu li:hover::after,
 .menu-items-smallerWidth li:hover::after {
-  transform: scaleX(1); /* Expand to full text width */
+  transform: scaleX(1);
 }
-
 .active {
   position: relative;
 }
 
 .active::after {
   content: "";
-  width: 100%; /* Full underline for active item */
+  width: 100%;
   height: 2px;
   background-color: orangered;
   position: absolute;
-  bottom: 22%;
+  bottom: 20%;
   left: 0;
-  transform: scaleX(1); /* Ensure it's fully visible */
+  transform: scaleX(1);
 }
 
 @media (max-width: 638px) {

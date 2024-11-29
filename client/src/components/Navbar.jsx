@@ -13,10 +13,8 @@ const Navbar = () => {
   return (
     <header>
       <nav className="w-full sticky top-0 left-0 py-3 px-4 z-[100] bg-[#B6A28E]/10 shadow-xl">
-        <div
-          id="nav-upperSeaction-wrapper"
-          className="flex items-center justify-between pb-3"
-        >
+        <div id="nav-wrapper" className="flex items-center justify-between">
+          {/* Nav Head */}
           <div id="nav-head" style={{ fontFamily: "Courgette, cursive" }}>
             <Link to="/">
               <h1 className="text-xl font-bold cursor-pointer">
@@ -25,10 +23,24 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Search Bar */}
-          <div className="flex gap-6 items-center justify-center">
-            <SearchBar />
+          {/* Nav Menu List */}
+          <ul className="flex items-center justify-center gap-8">
+            {menuItems.map((menu, index) => (
+              <NavLink
+                key={index}
+                to={menu === "Home" ? "/" : `/${menu.toLowerCase()}`}
+                className="cursor-pointer"
+                onClick={() => {
+                  setVisible(false);
+                }}
+              >
+                <li className="uppercase">{menu}</li>
+              </NavLink>
+            ))}
+          </ul>
 
+          {/* Nav Icons */}
+          <div className="flex gap-6 items-center justify-center">
             <div
               id="nav-btn"
               className="flex items-center justify-center gap-8"
@@ -64,66 +76,52 @@ const Navbar = () => {
             </div>
 
             {/* Side bar for smaller screens */}
-            <div
-              id="mobile-view-menu"
-              className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ease-out ${
-                visible ? "w-full h-[100vh]" : "w-0"
-              }`}
-            >
-              <div className="close-btn">
-                <span
-                  className="inline-block m-4 cursor-pointer text-xl font-medium text-slate-600 hover:text-slate-950"
-                  onClick={() => {
-                    setVisible(false);
-                  }}
-                >
-                  <i className="fa-solid fa-chevron-up -rotate-90 px-3" />
-                  Back
-                </span>
-              </div>
-
-              <div className="menu-items-smallerWidth">
-                <ul className="flex flex-col items-start gap-4">
-                  {menuItems.map((menu, index) => (
-                    <NavLink
-                      key={index}
-                      to={menu === "Home" ? "/" : `/${menu.toLowerCase()}`}
-                      className="cursor-pointer m-4"
-                      onClick={() => setVisible(false)} // Close sidebar on navigation
-                    >
-                      <li className="uppercase">{menu}</li>
-                    </NavLink>
-                  ))}
-                </ul>
-              </div>
+            {/* <div
+            id="mobile-view-menu"
+            className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ease-out ${
+              visible ? "w-full h-[100vh]" : "w-0"
+            }`}
+          >
+            <div className="close-btn">
+              <span
+                className="inline-block m-4 cursor-pointer text-xl font-medium text-slate-600 hover:text-slate-950"
+                onClick={() => {
+                  setVisible(false);
+                }}
+              >
+                <i className="fa-solid fa-chevron-up -rotate-90 px-3" />
+                Back
+              </span>
             </div>
-          </div>
-        </div>
 
-        <div
+            <div className="menu-items-smallerWidth">
+              <ul className="flex flex-col items-start gap-4">
+                {menuItems.map((menu, index) => (
+                  <NavLink
+                    key={index}
+                    to={menu === "Home" ? "/" : `/${menu.toLowerCase()}`}
+                    className="cursor-pointer m-4"
+                    onClick={() => setVisible(false)} // Close sidebar on navigation
+                  >
+                    <li className="uppercase">{menu}</li>
+                  </NavLink>
+                ))}
+              </ul>
+            </div>
+          </div> */}
+          </div>
+
+          {/* <div
           id="nav-lowerSeaction-wrapper"
-          className="w-full flex items-center justify-start pb-3"
+          className="w-full flex items-center justify-between pb-3"
         >
+          <SearchBar />
           <div
             id="nav-menu"
             style={{ fontFamily: "Roboto, sans-serif" }}
             className="hidden sm:flex lg:flex md:flex xl:flex"
-          >
-            <ul className="flex items-center justify-center gap-8">
-              {menuItems.map((menu, index) => (
-                <NavLink
-                  key={index}
-                  to={menu === "Home" ? "/" : `/${menu.toLowerCase()}`}
-                  className="cursor-pointer"
-                  onClick={() => {
-                    setVisible(false);
-                  }}
-                >
-                  <li className="uppercase">{menu}</li>
-                </NavLink>
-              ))}
-            </ul>
-          </div>
+          ></div>
+        </div> */}
         </div>
       </nav>
     </header>

@@ -2,7 +2,7 @@ const SearchBar = () => {
   return (
     <div
       id="searchBar"
-      className="hidden sm:flex w-80 items-center justify-center gap-3 px-3 rounded-md bg-[#B6A28E]/25 shadow-md border border-[#B6A28E]/80"
+      className="flex w-80 items-center justify-center gap-3 px-3 rounded-md bg-[#B6A28E]/25 shadow-md border border-[#B6A28E]/80"
     >
       <input
         type="text"
