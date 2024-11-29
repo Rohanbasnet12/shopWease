@@ -25,20 +25,26 @@ const Navbar = () => {
           </div>
 
           {/* Nav Menu List */}
-          <ul className="flex items-center justify-center gap-8">
-            {menuItems.map((menu, index) => (
-              <NavLink
-                key={index}
-                to={menu === "Home" ? "/" : `/${menu.toLowerCase()}`}
-                className="cursor-pointer"
-                onClick={() => {
-                  setVisible(false);
-                }}
-              >
-                <li className="uppercase">{menu}</li>
-              </NavLink>
-            ))}
-          </ul>
+          <div
+            id="nav-menu-wrapper"
+            style={{ fontFamily: "Roboto, sans-serif" }}
+            className="hidden sm:flex lg:flex md:flex xl:flex"
+          >
+            <ul className="flex items-center justify-center gap-8">
+              {menuItems.map((menu, index) => (
+                <NavLink
+                  key={index}
+                  to={menu === "Home" ? "/" : `/${menu.toLowerCase()}`}
+                  className="cursor-pointer"
+                  onClick={() => {
+                    setVisible(false);
+                  }}
+                >
+                  <li className="uppercase">{menu}</li>
+                </NavLink>
+              ))}
+            </ul>
+          </div>
 
           {/* Nav Icons */}
           <div className="flex gap-6 items-center justify-center">
@@ -130,8 +136,7 @@ const Navbar = () => {
           <SearchBar />
           <div
             id="nav-menu"
-            style={{ fontFamily: "Roboto, sans-serif" }}
-            className="hidden sm:flex lg:flex md:flex xl:flex"
+            
           ></div>
         </div> */}
         </div>
