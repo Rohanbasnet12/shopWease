@@ -1,13 +1,13 @@
-#nav-menu li,
+#nav-wrapper li,
 .menu-items-smallerWidth li {
   position: relative;
   overflow: hidden;
   list-style: none;
-  display: inline-block; /* Ensure li adapts to text width */
+  display: inline-block;
   text-align: center;
 }
 
-#nav-menu li::after,
+#nav-wrapper li::after,
 .menu-items-smallerWidth li::after {
   content: "";
   width: 100%;
@@ -21,7 +21,7 @@
   transition: transform 0.2s ease;
 }
 
-#nav-menu li:hover::after,
+#nav-wrapper li:hover::after,
 .menu-items-smallerWidth li:hover::after {
   transform: scaleX(1);
 }

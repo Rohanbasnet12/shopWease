@@ -3,8 +3,9 @@ import SearchBar from "./SearchBar";
 import ProfileCard from "./ProfileCard";
 import "../styles/MenuItems.css";
 import { Link, NavLink } from "react-router-dom";
-import CartImg from "../assets/frontend_assets/cart_icon.png";
+import CartIcon from "../assets/frontend_assets/cart_icon.png";
 import hamBtn from "../assets/frontend_assets/menu_icon.png";
+import SearchIcon from "../assets/frontend_assets/search_icon.png";
 
 const Navbar = () => {
   const menuItems = ["Home", "Collections", "About", "Contact"];
@@ -45,6 +46,17 @@ const Navbar = () => {
               id="nav-btn"
               className="flex items-center justify-center gap-8"
             >
+              {/* Search Button */}
+              <div id="search-btn">
+                <img
+                  src={SearchIcon}
+                  alt="Search Icon"
+                  aria-label="Search-bar"
+                  className="leading-3 group-hover:text-green-500 w-5 h-5"
+                />
+              </div>
+
+              {/* Cart Button */}
               <div
                 id="cart-Btn"
                 className="flex flex-col items-center justify-center cursor-pointer group relative"
@@ -53,8 +65,8 @@ const Navbar = () => {
                   10
                 </span>
                 <img
-                  src={CartImg}
-                  alt="Card Image"
+                  src={CartIcon}
+                  alt="Card Icon"
                   aria-label="Cart"
                   className="leading-3 group-hover:text-green-500 w-5 h-5"
                 />
