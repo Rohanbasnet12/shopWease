@@ -40,3 +40,9 @@
   left: 0;
   transform: scaleX(1); /* Ensure it's fully visible */
 }
+
+@media (max-width: 638px) {
+  .menu-items-smallerWidth {
+    scroll-behavior: none;
+  }
+}
