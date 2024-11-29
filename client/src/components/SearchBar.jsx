@@ -1,7 +1,20 @@
 import { useState } from "react";
 
 const SearchBar = () => {
+  const [searchInput, setSearchInput] = useState("");
   const [isClosed, setIsClosed] = useState(false);
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setSearchInput(e.target.value);
+
+    setIsClosed(value.length > 0);
+  };
+
+  const clearInput = () => {
+    setSearchInput("");
+    setIsClosed(false);
+  };
 
   return (
     <div
@@ -14,18 +27,17 @@ const SearchBar = () => {
         id="searchBarInput"
         name="searchBarInput"
         className="outline-none w-full py-1 bg-transparent"
+        value={searchInput}
+        onChange={handleInputChange}
         onKeyDown={() => setIsClosed(true)}
       />
       <button
-        onClick={() => {
-          alert("Searching");
-        }}
+        onClick={clearInput}
+        className={`${
+          isClosed ? "flex" : "hidden"
+        } items-center justify-center`}
       >
-        <i
-          className={`fa-solid fa-xmark text-slate-500 ${
-            isClosed ? "flex" : "hidden"
-          }`}
-        ></i>
+        <i className="fa-solid fa-xmark text-slate-500"></i>
       </button>
     </div>
   );
