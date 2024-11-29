@@ -11,6 +11,8 @@ const SearchBar = () => {
     setIsClosed(value.length > 0);
   };
 
+  const handleSubmit = () => {};
+
   const clearInput = () => {
     setSearchInput("");
     setIsClosed(false);
