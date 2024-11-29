@@ -19,7 +19,7 @@ const SearchBar = () => {
   return (
     <div
       id="searchBar"
-      className="flex w-[70vw] sm:w-[400px] lg:w-[500px] xl:w-[500px] items-center justify-center gap-3 px-3 rounded-md bg-[#B6A28E]/25 shadow-md border border-[#B6A28E]/80"
+      className="flex w-[70vw] sm:w-[400px] lg:w-[500px] xl:w-[500px] items-center justify-center gap-3 px-3 rounded-xl bg-[#B6A28E]/25 shadow-md border border-[#B6A28E]/80"
     >
       <i className="fa-solid fa-magnifying-glass text-slate-800"></i>
       <input

@@ -1,6 +1,7 @@
 import React from "react";
 import homeImg from "../assets/homeImg.png";
 import { Link } from "react-router-dom";
+import "../styles/Responsive.css";
 
 const Hero = () => {
   return (
@@ -9,7 +10,7 @@ const Hero = () => {
       className="w-full h-screen bg-[#B6A28E] pt-10"
       style={{ fontFamily: `"Roboto", sans-serif` }}
     >
-      <div className="hero-wrapper container mx-auto overflow-hidden relative rounded-3xl">
+      <div className="hero-wrapper container mx-auto overflow-hidden relative sm:rounded-3xl lg:rounded-3xl xl:rounded-3xl">
         {/* {Image} */}
         <div className="img_wrapper h-[80vh] w-full -mt-10 overflow-hidden">
           <img
@@ -27,11 +28,11 @@ const Hero = () => {
 
             <div className="flex items-center justify-between">
               <div className="flex flex-col items-start">
-                <span className="text-xm text-slate-100 font-thin">
+                <span className="text-base text-slate-100 font-thin">
                   Find out best spring collection. Offering our best quality
                   production.
                 </span>
-                <span className="text-xm text-slate-100 font-thin">
+                <span className="text-base text-slate-100 font-thin">
                   Only at shopWease
                 </span>
               </div>
