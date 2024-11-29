@@ -21,29 +21,30 @@ const Hero = () => {
         </div>
 
         <div className="info-wrapper w-full lg:px-10 md:p-6 xl:px-12 p-3 flex justify-between items-center absolute bottom-4">
-          <div className="flex flex-col w-full gap-3">
-            <p className="text-white font-bold text-4xl uppercase">
-              shopWease Spring Collections
-            </p>
+          <div className="flex flex-row w-full gap-3 sm:flex-col border">
+            <div className="shop-description-wrapper">
+              <p className="text-white font-bold text-4xl uppercase">
+                shopWease Spring Collections
+              </p>
 
-            <div className="flex items-center justify-between">
-              <div className="flex flex-col items-start">
-                <span className="text-base text-slate-100 font-thin">
-                  Find out best spring collection. Offering our best quality
-                  production.
-                </span>
-                <span className="text-base text-slate-100 font-thin">
-                  Only at shopWease
-                </span>
+              <div className="flex items-center justify-between">
+                <div className="flex flex-col items-start">
+                  <span className="text-base text-slate-100 font-thin">
+                    Find out best spring collection. Offering our best quality
+                    production.
+                  </span>
+                  <span className="text-base text-slate-100 font-thin">
+                    Only at shopWease
+                  </span>
+                </div>
               </div>
-
-              <Link
-                to="/collections"
-                className="border bg-white rounded-3xl px-6 py-2 text-md font-medium shadow-lg hover:bg-[#E07B39] hover:text-white transition-all"
-              >
-                Buy Now
-              </Link>
             </div>
+            <Link
+              to="/collections"
+              className="w-[120px] border bg-white rounded-3xl py-2 text-md font-medium shadow-lg hover:bg-[#E07B39] hover:text-white transition-all flex items-center justify-center"
+            >
+              Buy Now
+            </Link>
           </div>
         </div>
       </div>
