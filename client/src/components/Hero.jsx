@@ -21,19 +21,19 @@ const Hero = () => {
         </div>
 
         <div className="info-wrapper w-full lg:px-10 md:p-6 xl:px-12 p-3 flex justify-between items-center absolute bottom-4">
-          <div className="flex flex-row w-full gap-3 sm:flex-col border">
+          <div className="w-full flex flex-col items-start gap-4 justify-between sm:flex-row sm:items-end">
             <div className="shop-description-wrapper">
-              <p className="text-white font-bold text-4xl uppercase">
+              <p className="text-white font-bold text-2xl sm:text-4xl uppercase">
                 shopWease Spring Collections
               </p>
 
               <div className="flex items-center justify-between">
                 <div className="flex flex-col items-start">
-                  <span className="text-base text-slate-100 font-thin">
+                  <span className="text-xs sm:text-base text-slate-100 font-thin">
                     Find out best spring collection. Offering our best quality
                     production.
                   </span>
-                  <span className="text-base text-slate-100 font-thin">
+                  <span className="text-xs sm:text-base text-slate-100 font-thin">
                     Only at shopWease
                   </span>
                 </div>
