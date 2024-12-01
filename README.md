@@ -4,6 +4,10 @@ shopWease is a modern PERN (PostgreSQL, Express, React, Node.js) stack e-commerc
 
 ![ Shop With Ease screenshot ](/client/src/assets/shopWease.png)
 
+## Table of Contents
+1. [Features](#features)
+2. [Tech Stack](#tech-stack)
+
 ## Features
 
 - **User Authentication**: Secure login and registration using JWT tokens.
