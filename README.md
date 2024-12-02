@@ -21,3 +21,5 @@ shopWease is a modern PERN (PostgreSQL, Express, React, Node.js) stack e-commerc
 
 - **Frontend**: React, Redux (for state management), Tailwind CSS
 - **Backend**: Node.js, Express.js, PostgreSQL
+- **Authentication**: JWT (JSON Web Tokens)
+- **Deployment**: GitHub Pages for frontend, Heroku for backend (optional)
