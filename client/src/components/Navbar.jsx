@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav className="w-full sticky top-0 left-0 py-3 px-4 z-[100] bg-[#B6A28E]/10 shadow-xl">
+      <nav className="w-full sticky top-0 left-0 py-3 px-4 z-[100] bg-[#B6A28E]/10">
         <div
           id="nav-upperSeaction-wrapper"
           className="flex items-center justify-between pb-3"

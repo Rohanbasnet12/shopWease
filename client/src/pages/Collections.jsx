@@ -5,7 +5,7 @@ import DropDownIcon from "../assets/frontend_assets/dropdown_icon.png";
 
 const Collections = () => {
   const { products } = useContext(ShopContext);
-  const [showFilter, setShowFilter] = useState(false);
+  const [showFilter, setShowFilter] = useState(true);
 
   return (
     <div
@@ -21,7 +21,7 @@ const Collections = () => {
       />
       <div
         id="collection-wrapper"
-        className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t"
+        className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10"
       >
         {/* Filter Functionality */}
         <div className="min-w-60">
