@@ -10,7 +10,7 @@ const Collections = () => {
   return (
     <div
       id="collection"
-      className="px-6 md:px-14 lg:px-20"
+      className="px-6 md:px-14 lg:px-20 mb-16"
       style={{ fontFamily: `"Roboto", sans-serif` }}
     >
       <Title
@@ -24,7 +24,7 @@ const Collections = () => {
         className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10"
       >
         {/* Filter Functionality */}
-        <div className="min-w-60">
+        <div id="collectionFilterSection-wrapper" className="min-w-60">
           <p
             onClick={() => {
               setShowFilter(!showFilter);
@@ -83,6 +83,8 @@ const Collections = () => {
             </div>
           </div>
         </div>
+        {/* Card Section */}
+        <div id="collectionCardSection-wrapper" className="border-2"></div>
       </div>
     </div>
   );
