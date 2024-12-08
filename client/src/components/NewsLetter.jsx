@@ -8,7 +8,7 @@ const NewsLetter = () => {
   return (
     <div
       id="newsletter"
-      className="w-full pt-10 px-6 md:px-14 lg:px-20"
+      className="w-full pt-10 px-3 md:px-8 lg:px-20"
       style={{ fontFamily: `"Roboto", sans-serif` }}
     >
       <div className="newsLetter-wrapper flex flex-col items-center justify-center">

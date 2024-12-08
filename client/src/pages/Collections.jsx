@@ -15,7 +15,7 @@ const Collections = () => {
   return (
     <div
       id="collection"
-      className="px-3 md:px-14 lg:px-20 mb-16"
+      className="px-3 md:px-8 lg:px-20 mb-16"
       style={{ fontFamily: `"Roboto", sans-serif` }}
     >
       <div
@@ -95,7 +95,7 @@ const Collections = () => {
           </div>
 
           {/* Map Products */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-5 gap-y-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 gap-y-6">
             {filterProducts.map((item, index) => (
               <ProductItem
                 key={index}

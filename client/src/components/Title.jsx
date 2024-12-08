@@ -8,7 +8,7 @@ const Title = ({ title, description }) => {
       style={{ fontFamily: `"Roboto", sans-serif` }}
     >
       <h1
-        className="uppercase text-center text-lg sm:text-2xl font-bold flex items-center justify-center gap-3"
+        className="uppercase text-left text-lg sm:text-2xl font-bold flex items-center justify-center gap-3"
         style={{ color: "#E07B39" }}
       >
         {title}{" "}

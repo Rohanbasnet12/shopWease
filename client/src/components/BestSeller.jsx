@@ -13,7 +13,7 @@ const BestSeller = () => {
   }, [products]);
 
   return (
-    <div className="px-6 md:px-14 lg:px-20">
+    <div className="px-3 md:px-8 lg:px-20">
       <Title
         title={"Best Sellers"}
         description={
