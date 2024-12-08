@@ -1,6 +1,10 @@
 import React from "react";
 
 const NewsLetter = () => {
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <div
       id="newsletter"
@@ -15,7 +19,10 @@ const NewsLetter = () => {
           Subscribe us to get the latest collection, get a chance to claim huge
           discount!
         </p>
-        <form className="w-full sm:w-3/4 flex items-center gap-3 mx-auto my-6 border pl-6">
+        <form
+          onSubmit={onSubmitHandler}
+          className="w-full sm:w-3/4 flex items-center gap-3 mx-auto my-6 border pl-6"
+        >
           <input
             type="email"
             placeholder="Enter your email"
