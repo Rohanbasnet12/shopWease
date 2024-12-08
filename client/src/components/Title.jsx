@@ -8,12 +8,12 @@ const Title = ({ title, description }) => {
       style={{ fontFamily: `"Roboto", sans-serif` }}
     >
       <h1
-        className="uppercase text-center text-2xl font-bold flex items-center justify-center gap-3"
+        className="uppercase text-center text-lg sm:text-2xl font-bold flex items-center justify-center gap-3"
         style={{ color: "#E07B39" }}
       >
         {title}{" "}
         <span
-          className="w-[60px] h-[2px] inline-block"
+          className="w-[30px] sm:w-[60px] h-[2px] inline-block"
           style={{ background: "#B6A28E" }}
         ></span>
       </h1>

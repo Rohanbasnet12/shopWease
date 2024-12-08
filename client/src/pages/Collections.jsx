@@ -2,15 +2,20 @@ import React, { useContext, useEffect, useState } from "react";
 import Title from "../components/Title";
 import { ShopContext } from "../context/ShopContext";
 import DropDownIcon from "../assets/frontend_assets/dropdown_icon.png";
+import ProductItem from "../components/ProductItem";
 
 const Collections = () => {
   const { products } = useContext(ShopContext);
   const [showFilter, setShowFilter] = useState(true);
+  const [filterProducts, setFilterProducts] = useState([]);
 
+  useEffect(() => {
+    setFilterProducts(products);
+  }, []);
   return (
     <div
       id="collection"
-      className="px-6 md:px-14 lg:px-20 mb-16"
+      className="px-3 md:px-14 lg:px-20 mb-16"
       style={{ fontFamily: `"Roboto", sans-serif` }}
     >
       <div
@@ -18,12 +23,12 @@ const Collections = () => {
         className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10"
       >
         {/* Filter Functionality */}
-        <div id="collectionFilterSection-wrapper" className="mt-10 min-w-60">
+        <div id="collectionFilterSection-wrapper" className="min-w-60">
           <p
             onClick={() => {
               setShowFilter(!showFilter);
             }}
-            className="uppercase my-2 text-xl flex items-center cursor-pointer gap-2"
+            className="uppercase text-xl flex items-center cursor-pointer gap-2 my-10 "
           >
             Filter
             <img
@@ -34,7 +39,7 @@ const Collections = () => {
           </p>
           {/* Filter Category */}
           <div
-            className={`border border-gray-300 pl-5 py-3 mt-6 ${
+            className={`border border-gray-300 pl-5 py-3 mt-20 ${
               showFilter ? "" : "hidden"
             }`}
           >
@@ -80,7 +85,7 @@ const Collections = () => {
         {/* Card Section */}
         <div id="collectionCardSection-wrapper" className="flex-1">
           <div className="flex justify-between text-base sm:text-2xl mb-4">
-            <Title title={"LATEST COLLECTIONS"} />
+            <Title title={"All COLLECTIONS"} />
             {/* Product sort */}
             <select className="border-2 border-gray-300 text-sm px-2 h-10 my-10">
               <option value="relavent">Sort by: Relavent</option>
@@ -90,7 +95,17 @@ const Collections = () => {
           </div>
 
           {/* Map Products */}
-          <div className="grid grid-cols-2"></div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-5 gap-y-6">
+            {filterProducts.map((item, index) => (
+              <ProductItem
+                key={index}
+                id={item._id}
+                image={item.image}
+                name={item.name}
+                price={item.price}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

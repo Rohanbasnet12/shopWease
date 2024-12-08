@@ -12,7 +12,7 @@ const LatestCollection = () => {
   }, []);
 
   return (
-    <div className="px-6 md:px-14 lg:px-20">
+    <div className="px-3 md:px-14 lg:px-20">
       <Title
         title={"LATEST COLLECTIONS"}
         description={
