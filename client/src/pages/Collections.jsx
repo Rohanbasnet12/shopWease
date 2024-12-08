@@ -13,18 +13,12 @@ const Collections = () => {
       className="px-6 md:px-14 lg:px-20 mb-16"
       style={{ fontFamily: `"Roboto", sans-serif` }}
     >
-      <Title
-        title={"LATEST COLLECTIONS"}
-        description={
-          "Discover our latest collections featuring trendy designs, quality craftsmanship, and timeless styles to elevate your wardrobe effortlessly."
-        }
-      />
       <div
         id="collection-wrapper"
         className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10"
       >
         {/* Filter Functionality */}
-        <div id="collectionFilterSection-wrapper" className="min-w-60">
+        <div id="collectionFilterSection-wrapper" className="mt-10 min-w-60">
           <p
             onClick={() => {
               setShowFilter(!showFilter);
@@ -84,7 +78,17 @@ const Collections = () => {
           </div>
         </div>
         {/* Card Section */}
-        <div id="collectionCardSection-wrapper" className="border-2"></div>
+        <div id="collectionCardSection-wrapper" className="flex-1">
+          <div className="flex justify-between text-base sm:text-2xl mb-4">
+            <Title title={"LATEST COLLECTIONS"} />
+            {/* Product sort */}
+            <select className="border-2 border-gray-300 text-sm px-2">
+              <option value="relavent">Sort by: Relavent</option>
+              <option value="low-high">Sort by: Low to High</option>
+              <option value="high-low">Sort by: High to Low</option>
+            </select>
+          </div>
+        </div>
       </div>
     </div>
   );
