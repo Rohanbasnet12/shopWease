@@ -48,10 +48,10 @@ const Navbar = () => {
           </div>
 
           {/* Nav Buttons */}
-          <div className="flex gap-6 items-center justify-center">
+          <div className="flex gap-4 items-center justify-center">
             <div
               id="nav-btn"
-              className="flex items-center justify-center gap-8"
+              className="flex items-center justify-center gap-6"
             >
               <div
                 id="cart-Btn"
@@ -64,7 +64,7 @@ const Navbar = () => {
                   src={CartImg}
                   alt="Card Image"
                   aria-label="Cart"
-                  className="leading-3 group-hover:text-green-500 w-5 h-5"
+                  className="leading-3 group-hover:text-green-500 w-4 h-4 sm:w-5 sm:h-5"
                 />
                 <span className="text-xs text-slate-700">Cart</span>
               </div>
@@ -76,7 +76,7 @@ const Navbar = () => {
               <img
                 src={hamBtn}
                 alt="ham burger icon"
-                className="w-5 cursor-pointer scale-125"
+                className="w-5 cursor-pointer"
                 onClick={() => {
                   setVisible(true);
                 }}
