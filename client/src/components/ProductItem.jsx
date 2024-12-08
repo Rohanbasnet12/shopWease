@@ -8,7 +8,7 @@ const ProductItem = ({ id, image, name, price }) => {
   return (
     <Link
       to={`/product/${id}`}
-      className="cursor-pointer border-2 border-rose-400/40 shadow-lg shadow-rose-400/20 rounded-xl p-2"
+      className="cursor-pointer border-2 border-rose-400/40 shadow-lg shadow-rose-400/20 rounded-md p-2"
       style={{ fontFamily: `"Roboto", sans-serif` }}
     >
       <div className="overflow-hidden">

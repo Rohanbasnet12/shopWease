@@ -64,7 +64,7 @@ const Navbar = () => {
                   src={CartImg}
                   alt="Card Image"
                   aria-label="Cart"
-                  className="leading-3 group-hover:text-green-500 w-4 h-4 sm:w-5 sm:h-5"
+                  className="leading-3 group-hover:text-green-500 w-5 h-5"
                 />
                 <span className="text-xs text-slate-700">Cart</span>
               </div>

@@ -4,7 +4,7 @@ import "../styles/DropDown.css";
 const ProfileCard = () => {
   return (
     <div id="profileCard" className="relative">
-      <div className="profileCard_wrapper rounded-full w-10 h-10 flex items-center justify-center border-black border overflow-hidden cursor-pointer hover:scale-110">
+      <div className="profileCard_wrapper rounded-full w-9 h-9 sm:w-11 sm:h-11 flex items-center justify-center border-black border overflow-hidden cursor-pointer hover:scale-110">
         <img
           src="../src/assets/profile1.webp"
           alt="Profile Picture"
