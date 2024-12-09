@@ -27,9 +27,22 @@ const Collections = () => {
     }
   };
 
+  const applyFilter = () => {
+    let productsCopy = products.slice();
+    if (category.length > 0) {
+      productsCopy.filter((item) => category.includes(item.category));
+    }
+
+    setFilterProducts(productsCopy);
+  };
+
   useEffect(() => {
     setFilterProducts(products);
   }, []);
+
+  useEffect(() => {
+    applyFilter();
+  }, [category, subCategory]);
 
   return (
     <div
