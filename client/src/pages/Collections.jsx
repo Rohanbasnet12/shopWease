@@ -29,16 +29,21 @@ const Collections = () => {
 
   const applyFilter = () => {
     let productsCopy = products.slice();
+
     if (category.length > 0) {
-      productsCopy.filter((item) => category.includes(item.category));
+      productsCopy = productsCopy.filter((item) =>
+        category.includes(item.category)
+      );
+    }
+
+    if (subCategory.length > 0) {
+      productsCopy = productsCopy.filter((item) =>
+        subCategory.includes(item.subCategory)
+      );
     }
 
     setFilterProducts(productsCopy);
   };
-
-  useEffect(() => {
-    setFilterProducts(products);
-  }, []);
 
   useEffect(() => {
     applyFilter();
