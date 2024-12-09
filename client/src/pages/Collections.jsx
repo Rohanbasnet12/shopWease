@@ -7,72 +7,67 @@ import ProductItem from "../components/ProductItem";
 const Collections = () => {
   const { products } = useContext(ShopContext);
   const [showFilter, setShowFilter] = useState(true);
-  const [filterProducts, setFilterProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [category, setCategory] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
   const [sortType, setSortType] = useState("relevant");
 
   const toggleCategory = (e) => {
-    if (category.includes(e.target.value)) {
-      setCategory((prev) => prev.filter((item) => item !== e.target.value));
-    } else {
-      setCategory((prev) => [...prev, e.target.value]);
-    }
+    setCategory((prev) =>
+      prev.includes(e.target.value)
+        ? prev.filter((item) => item !== e.target.value)
+        : [...prev, e.target.value]
+    );
   };
 
   const toggleSubCategory = (e) => {
-    if (subCategory.includes(e.target.value)) {
-      setSubCategory((prev) => prev.filter((item) => item !== e.target.value));
-    } else {
-      setSubCategory((prev) => [...prev, e.target.value]);
-    }
+    setSubCategory((prev) =>
+      prev.includes(e.target.value)
+        ? prev.filter((item) => item !== e.target.value)
+        : [...prev, e.target.value]
+    );
   };
 
   const applyFilter = () => {
-    let productsCopy = products.slice();
+    let filtered = [...products];
 
     if (category.length > 0) {
-      productsCopy = productsCopy.filter((item) =>
-        category.includes(item.category)
-      );
+      filtered = filtered.filter((item) => category.includes(item.category));
     }
 
     if (subCategory.length > 0) {
-      productsCopy = productsCopy.filter((item) =>
+      filtered = filtered.filter((item) =>
         subCategory.includes(item.subCategory)
       );
     }
 
-    setFilterProducts(productsCopy);
+    setFilteredProducts(filtered);
   };
 
   const sortProduct = () => {
-    let filterProductCopy = filterProducts.slice();
+    let sorted = [...filteredProducts];
 
     switch (sortType) {
       case "low-high":
-        filterProductCopy.sort((a, b) => {
-          a.price - b.price;
-        });
+        sorted.sort((a, b) => a.price - b.price);
         break;
       case "high-low":
-        filterProductCopy.sort((a, b) => {
-          b.price - a.price;
-        });
+        sorted.sort((a, b) => b.price - a.price);
         break;
-
       default:
         applyFilter();
-        break;
+        return;
     }
+
+    setFilteredProducts(sorted);
   };
 
   useEffect(() => {
     applyFilter();
-  }, [category, subCategory]);
+  }, [category, subCategory, products]);
 
   useEffect(() => {
-    applyFilter();
+    sortProduct();
   }, [sortType]);
 
   return (
@@ -194,7 +189,7 @@ const Collections = () => {
 
           {/* Map Products */}
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 gap-y-6">
-            {filterProducts.map((item, index) => (
+            {filteredProducts.map((item, index) => (
               <ProductItem
                 key={index}
                 id={item._id}
