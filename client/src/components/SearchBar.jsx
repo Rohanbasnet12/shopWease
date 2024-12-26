@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { ShopContext } from "../context/ShopContext";
 
 const SearchBar = () => {
+  const { search, setSearch } = useState(ShopContext);
+
   const [searchInput, setSearchInput] = useState("");
   const [isClosed, setIsClosed] = useState(false);
 
