@@ -5,14 +5,19 @@ import CartImg from "../assets/frontend_assets/cart_icon.png";
 import SearchImg from "../assets/frontend_assets/search_icon.png";
 import ProfileImg from "../assets/frontend_assets/profile_icon.png";
 import hamBtn from "../assets/frontend_assets/menu_icon.png";
+import SearchBar from "./SearchBar";
 
 const Navbar = () => {
   const menuItems = ["Home", "Collections", "About", "Contact"];
   const [visible, setVisible] = useState(false);
 
+  const handleSearch = () => {
+    alert("Searching...");
+  };
+
   return (
     <header>
-      <nav className="w-full sticky top-0 left-0 py-5 px-4 z-[100] flex items-center justify-between pb-3">
+      <nav className="w-full sticky top-0 left-0 py-7 px-4 sm:px-10 z-[100] flex items-center justify-between">
         <div id="nav-head" style={{ fontFamily: "Courgette, cursive" }}>
           <Link to="/">
             <h1 className="text-2xl font-bold cursor-pointer">
@@ -50,6 +55,7 @@ const Navbar = () => {
             <div
               id="search-Btn"
               className="flex flex-col items-center justify-center cursor-pointer group relative"
+              onClick={() => handleSearch()}
             >
               <img
                 src={SearchImg}
