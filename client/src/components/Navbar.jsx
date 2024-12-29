@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { gsap } from "gsap";
 import "../styles/MenuItems.css";
 import { Link, NavLink } from "react-router-dom";
 import CartImg from "../assets/frontend_assets/cart_icon.png";
@@ -10,10 +11,30 @@ import SearchBar from "./SearchBar";
 const Navbar = () => {
   const menuItems = ["Home", "Collections", "About", "Contact"];
   const [visible, setVisible] = useState(false);
+  const [showSearchBar, setShowSearchBar] = useState(false);
+  const searchBarRef = useRef(null);
 
   const handleSearch = () => {
-    alert("Searching...");
+    setShowSearchBar((prev) => !prev);
   };
+
+  useEffect(() => {
+    if (showSearchBar) {
+      gsap.to(searchBarRef.current, {
+        height: "auto",
+        opacity: 1,
+        duration: 0.5,
+        ease: "power3.out",
+      });
+    } else {
+      gsap.to(searchBarRef.current, {
+        height: 0,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power3.in",
+      });
+    }
+  }, [showSearchBar]);
 
   return (
     <header>
@@ -27,7 +48,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Nav Menu  */}
+          {/* Nav Menu */}
           <div
             id="nav-menu"
             style={{ fontFamily: "Roboto, sans-serif" }}
@@ -144,9 +165,16 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+
+        {/* Animated Search Bar */}
         <div
           id="search-bar-container"
-          className="w-full flex items-center justify-center"
+          ref={searchBarRef}
+          className={
+            showSearchBar
+              ? " pt-4 w-full flex items-center justify-center overflow-hidden opacity-0 h-0"
+              : `w-full flex items-center justify-center overflow-hidden opacity-0 h-0`
+          }
         >
           <SearchBar />
         </div>
