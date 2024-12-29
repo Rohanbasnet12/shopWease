@@ -4,13 +4,14 @@ import { Link, NavLink } from "react-router-dom";
 import CartImg from "../assets/frontend_assets/cart_icon.png";
 import ProfileImg from "../assets/frontend_assets/profile_icon.png";
 import hamBtn from "../assets/frontend_assets/menu_icon.png";
+import SearchBar from "../components/SearchBar";
 
 const Navbar = () => {
   const menuItems = ["Home", "Collections", "About", "Contact"];
 
   return (
     <header>
-      <nav className="sticky top-0 left-0 flex items-center justify-between py-4 px-7">
+      <nav className="sticky top-0 left-0 flex items-center justify-between py-6 px-7">
         {/* Nav Header */}
         <div id="nav-head" style={{ fontFamily: "Courgette, cursive" }}>
           <Link to="/">
@@ -18,6 +19,10 @@ const Navbar = () => {
               shopWease<span className="text-orange-600">.</span>
             </h1>
           </Link>
+        </div>
+
+        <div id="nav-searchBar">
+          <SearchBar />
         </div>
 
         {/* Nav Buttons */}
@@ -50,7 +55,7 @@ const Navbar = () => {
             />
           </div>
 
-          <div className="ham-btn sm:hidden">
+          <div className="ham-btn">
             <img
               src={hamBtn}
               alt="ham burger icon"
