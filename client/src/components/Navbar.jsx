@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav className="w-full sticky top-0 left-0 py-5 px-4 sm:px-10 z-[100] flex items-center justify-between">
+      <nav className="w-full sticky top-0 left-0 py-5 px-2 sm:px-10 z-[100] flex items-center justify-between">
         <div id="nav-head" style={{ fontFamily: "Courgette, cursive" }}>
           <Link to="/">
             <h1 className="text-2xl font-bold cursor-pointer">
@@ -137,7 +137,7 @@ const Navbar = () => {
       </nav>
       <div
         id="search-bar-container"
-        className=" w-full flex items-center justify-center"
+        className=" w-full flex items-center justify-center pb-4 "
       >
         <SearchBar />
       </div>

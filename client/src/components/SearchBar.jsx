@@ -40,6 +40,9 @@ const SearchBar = () => {
           <i className="fa-solid fa-xmark text-slate-500"></i>
         </button>
       </div>
+      <div className="closeSearch-btn flex items-center justify-center rounded-full bg-[#B6A28E]/25 shadow-md border border-[#B6A28E]/80 ml-4 w-10 h-10 transition-all ease-linear hover:scale-110 cursor-pointer">
+        <i className="fa-solid fa-xmark text-xl font-bold" />
+      </div>
     </>
   ) : null;
 };
