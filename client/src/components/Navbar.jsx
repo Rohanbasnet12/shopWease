@@ -135,6 +135,12 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      <div
+        id="search-bar-container"
+        className=" w-full flex items-center justify-center"
+      >
+        <SearchBar />
+      </div>
     </header>
   );
 };
