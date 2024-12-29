@@ -1,13 +1,25 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/MenuItems.css";
 import { Link, NavLink } from "react-router-dom";
 import CartImg from "../assets/frontend_assets/cart_icon.png";
 import ProfileImg from "../assets/frontend_assets/profile_icon.png";
+import SearchImg from "../assets/frontend_assets/search_icon.png";
 import hamBtn from "../assets/frontend_assets/menu_icon.png";
 import SearchBar from "../components/SearchBar";
 
 const Navbar = () => {
   const menuItems = ["Home", "Collections", "About", "Contact"];
+  const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 600);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsWideScreen(window.innerWidth > 600);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <header>
@@ -21,12 +33,29 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div id="nav-searchBar">
-          <SearchBar />
-        </div>
+        {isWideScreen && (
+          <div id="nav-searchBar">
+            <SearchBar />
+          </div>
+        )}
 
         {/* Nav Buttons */}
         <div id="nav-btns" className="flex items-center justify-center gap-6">
+          {/* Conditionally render the search icon for narrow screens */}
+          {!isWideScreen && (
+            <div
+              id="search-Btn"
+              className="flex flex-col items-center justify-center cursor-pointer group relative"
+            >
+              <img
+                src={SearchImg}
+                alt="Search Icon"
+                aria-label="Search"
+                className="leading-3 group-hover:text-green-500 w-5 h-5"
+              />
+            </div>
+          )}
+
           {/* Cart Button */}
           <div
             id="cart-Btn"
@@ -37,11 +66,12 @@ const Navbar = () => {
             </span>
             <img
               src={CartImg}
-              alt="Card Image"
+              alt="Cart Icon"
               aria-label="Cart"
               className="leading-3 group-hover:text-green-500 w-5 h-5"
             />
           </div>
+
           {/* Profile Button */}
           <div
             id="profile-Btn"
@@ -49,16 +79,17 @@ const Navbar = () => {
           >
             <img
               src={ProfileImg}
-              alt="profile Image"
+              alt="Profile Icon"
               aria-label="Profile"
               className="leading-3 group-hover:text-green-500 w-5 h-5"
             />
           </div>
 
+          {/* Hamburger Button */}
           <div className="ham-btn">
             <img
               src={hamBtn}
-              alt="ham burger icon"
+              alt="Hamburger Icon"
               className="w-5 cursor-pointer"
             />
           </div>
