@@ -1,19 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
 
 const SearchBar = () => {
   const { search, setSearch, showSearch, setShowSearch } =
-    useState(ShopContext);
+    useContext(ShopContext);
 
-  const [searchInput, setSearchInput] = useState("");
   const [isClosed, setIsClosed] = useState(false);
-
-  const handleInputChange = (e) => {
-    const value = e.target.value;
-    setSearchInput(e.target.value);
-
-    setIsClosed(value.length > 0);
-  };
 
   const handleSubmit = () => {};
 
@@ -34,8 +26,9 @@ const SearchBar = () => {
           id="searchBarInput"
           name="searchBarInput"
           className="outline-none w-full py-1 bg-transparent"
-          value={searchInput}
-          onChange={handleInputChange}
+          placeholder="search..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
           onKeyDown={() => setIsClosed(true)}
         />
         <button
