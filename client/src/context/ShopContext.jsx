@@ -7,6 +7,7 @@ const ShopContextProvider = ({ children }) => {
   const currency = "₹";
   const deliveryFee = "10";
   const [search, setSearch] = useState("");
+  const [showSearch, setShowSearch] = useState(true);
 
   const value = {
     products,
@@ -14,6 +15,8 @@ const ShopContextProvider = ({ children }) => {
     deliveryFee,
     search,
     setSearch,
+    showSearch,
+    setShowSearch,
   };
 
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;

@@ -2,7 +2,8 @@ import { useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 
 const SearchBar = () => {
-  const { search, setSearch } = useState(ShopContext);
+  const { search, setSearch, showSearch, setShowSearch } =
+    useState(ShopContext);
 
   const [searchInput, setSearchInput] = useState("");
   const [isClosed, setIsClosed] = useState(false);
@@ -21,7 +22,7 @@ const SearchBar = () => {
     setIsClosed(false);
   };
 
-  return (
+  return showSearch ? (
     <>
       <div
         id="searchBar"
@@ -47,7 +48,7 @@ const SearchBar = () => {
         </button>
       </div>
     </>
-  );
+  ) : null;
 };
 
 export default SearchBar;
