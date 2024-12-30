@@ -17,6 +17,10 @@ const Navbar = () => {
     setIsSearch(true);
   };
 
+  const handleSearchBarVisibilityClose = () => {
+    setIsSearch(false);
+  };
+
   useEffect(() => {
     const handleResize = () => {
       setIsWideScreen(window.innerWidth > 645);
@@ -30,9 +34,13 @@ const Navbar = () => {
   return (
     <header>
       {isSearch ? (
-        <div className="searchBar-wrapper py-6 px-7 flex items-center justify-center">
-          <button id="goBack">
-            <i className="fa-solid fa-chevronUp" />
+        <div className="searchBar-wrapper py-6 px-7 flex items-center justify-between">
+          <button
+            id="goBack"
+            onClick={() => handleSearchBarVisibilityClose()}
+            className="hover:scale-125"
+          >
+            <i className="fa-solid fa-arrow-left font-bold text-xl"></i>
           </button>
           <SearchBar />
         </div>
