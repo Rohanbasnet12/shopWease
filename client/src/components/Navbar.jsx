@@ -34,11 +34,7 @@ const Navbar = () => {
   return (
     <header className="overflow-hidden">
       {isSearch ? (
-        <div
-          className={`searchBar-wrapper py-6 px-7 flex items-center justify-between transition-all duration-700 ease-out ${
-            isSearch ? "translate-x-[0%]" : "translate-x-[100%]"
-          }`}
-        >
+        <div className="searchBar-wrapper py-6 px-7 flex items-center justify-between transition-all duration-700 ease-out relative ">
           <button
             id="goBack"
             onClick={() => handleSearchBarVisibilityClose()}
