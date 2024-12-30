@@ -12,6 +12,7 @@ const Navbar = () => {
   const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 600);
 
   const [isSearch, setIsSearch] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   const handleSearchBarVisibility = () => {
     setIsSearch(true);
@@ -30,6 +31,8 @@ const Navbar = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const handleMenuVisibilty = () => {};
 
   return (
     <header className="overflow-hidden">
@@ -62,16 +65,13 @@ const Navbar = () => {
           )}
 
           {/* Nav Buttons */}
-          <div
-            id="nav-btns"
-            className="flex items-center justify-center gap-6"
-            onClick={() => handleSearchBarVisibility()}
-          >
+          <div id="nav-btns" className="flex items-center justify-center gap-6">
             {/* Conditionally render the search icon for narrow screens */}
             {!isWideScreen && (
               <div
                 id="search-Btn"
                 className="flex flex-col items-center justify-center cursor-pointer group relative"
+                onClick={() => handleSearchBarVisibility()}
               >
                 <img
                   src={SearchImg}
@@ -121,27 +121,40 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Nav Menu 
-        <div
-          id="nav-menu"
-          style={{ fontFamily: "Roboto, sans-serif" }}
-          className="hidden sm:flex lg:flex md:flex xl:flex"
-        >
-          <ul className="flex items-center justify-center gap-8">
-            {menuItems.map((menu, index) => (
-              <NavLink
-                key={index}
-                to={menu === "Home" ? "/" : `/${menu.toLowerCase()}`}
-                className="cursor-pointer"
+          {/* Nav Menu  */}
+          <div
+            id="mobile-view-menu"
+            className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ease-out ${
+              visible ? "w-full h-[100vh]" : "w-0"
+            }`}
+          >
+            <div className="close-btn">
+              <span
+                className="inline-block m-4 cursor-pointer text-xl font-medium text-slate-600 hover:text-slate-950"
                 onClick={() => {
                   setVisible(false);
                 }}
               >
-                <li className="uppercase">{menu}</li>
-              </NavLink>
-            ))}
-          </ul>
-        </div> */}
+                <i className="fa-solid fa-chevron-up -rotate-90 px-3" />
+                Back
+              </span>
+            </div>
+
+            <div className="menu-items-smallerWidth">
+              <ul className="flex flex-col items-start gap-4">
+                {menuItems.map((menu, index) => (
+                  <NavLink
+                    key={index}
+                    to={`menu === "Home" ? "/" : /${menu.toLowerCase()}`}
+                    className="cursor-pointer m-4"
+                    onClick={() => setVisible(false)} // Close sidebar on navigation
+                  >
+                    <li className="uppercase">{menu}</li>
+                  </NavLink>
+                ))}
+              </ul>
+            </div>
+          </div>
         </nav>
       )}
     </header>

@@ -29,7 +29,7 @@ const SearchBar = () => {
           type="text"
           id="searchBarInput"
           name="searchBarInput"
-          className="outline-none w-full py-1 pl-2 bg-transparent border-l-2 border-[#B6A28E]/80"
+          className="outline-none w-full py-1 pl-2 bg-transparent border-l border-[#B6A28E]/80"
           placeholder="search..."
           value={search}
           onChange={handleInputChange}
