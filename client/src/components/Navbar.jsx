@@ -11,9 +11,15 @@ const Navbar = () => {
   const menuItems = ["Home", "Collections", "About", "Contact"];
   const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 600);
 
+  const [isSearch, setIsSearch] = useState(false);
+
+  const handleSearchBarVisibility = () => {
+    setIsSearch(true);
+  };
+
   useEffect(() => {
     const handleResize = () => {
-      setIsWideScreen(window.innerWidth > 600);
+      setIsWideScreen(window.innerWidth > 645);
     };
 
     window.addEventListener("resize", handleResize);
@@ -23,79 +29,91 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav className="sticky top-0 left-0 flex items-center justify-between py-6 px-7">
-        {/* Nav Header */}
-        <div id="nav-head" style={{ fontFamily: "Courgette, cursive" }}>
-          <Link to="/">
-            <h1 className="text-2xl font-bold cursor-pointer">
-              shopWease<span className="text-orange-600">.</span>
-            </h1>
-          </Link>
+      {isSearch ? (
+        <div className="searchBar-wrapper py-6 px-7 flex items-center justify-center">
+          <button id="goBack">
+            <i className="fa-solid fa-chevronUp" />
+          </button>
+          <SearchBar />
         </div>
-
-        {isWideScreen && (
-          <div id="nav-searchBar">
-            <SearchBar />
+      ) : (
+        <nav className="sticky top-0 left-0 flex items-center justify-between py-6 px-7">
+          {/* Nav Header */}
+          <div id="nav-head" style={{ fontFamily: "Courgette, cursive" }}>
+            <Link to="/">
+              <h1 className="text-2xl font-bold cursor-pointer">
+                shopWease<span className="text-orange-600">.</span>
+              </h1>
+            </Link>
           </div>
-        )}
 
-        {/* Nav Buttons */}
-        <div id="nav-btns" className="flex items-center justify-center gap-6">
-          {/* Conditionally render the search icon for narrow screens */}
-          {!isWideScreen && (
-            <div
-              id="search-Btn"
-              className="flex flex-col items-center justify-center cursor-pointer group relative"
-            >
-              <img
-                src={SearchImg}
-                alt="Search Icon"
-                aria-label="Search"
-                className="leading-3 group-hover:text-green-500 w-5 h-5"
-              />
+          {isWideScreen && (
+            <div id="nav-searchBar">
+              <SearchBar />
             </div>
           )}
 
-          {/* Cart Button */}
+          {/* Nav Buttons */}
           <div
-            id="cart-Btn"
-            className="flex flex-col items-center justify-center cursor-pointer group relative"
+            id="nav-btns"
+            className="flex items-center justify-center gap-6"
+            onClick={() => handleSearchBarVisibility()}
           >
-            <span className="text-[8px] absolute -top-[4px] -right-[7px] text-white bg-slate-900 flex items-center justify-center rounded-full w-4 h-4">
-              10
-            </span>
-            <img
-              src={CartImg}
-              alt="Cart Icon"
-              aria-label="Cart"
-              className="leading-3 group-hover:text-green-500 w-5 h-5"
-            />
+            {/* Conditionally render the search icon for narrow screens */}
+            {!isWideScreen && (
+              <div
+                id="search-Btn"
+                className="flex flex-col items-center justify-center cursor-pointer group relative"
+              >
+                <img
+                  src={SearchImg}
+                  alt="Search Icon"
+                  aria-label="Search"
+                  className="leading-3 group-hover:text-green-500 w-5 h-5"
+                />
+              </div>
+            )}
+
+            {/* Cart Button */}
+            <div
+              id="cart-Btn"
+              className="flex flex-col items-center justify-center cursor-pointer group relative"
+            >
+              <span className="text-[8px] absolute -top-[4px] -right-[7px] text-white bg-slate-900 flex items-center justify-center rounded-full w-4 h-4">
+                10
+              </span>
+              <img
+                src={CartImg}
+                alt="Cart Icon"
+                aria-label="Cart"
+                className="leading-3 group-hover:text-green-500 w-5 h-5"
+              />
+            </div>
+
+            {/* Profile Button */}
+            <div
+              id="profile-Btn"
+              className="flex flex-col items-center justify-center cursor-pointer group relative"
+            >
+              <img
+                src={ProfileImg}
+                alt="Profile Icon"
+                aria-label="Profile"
+                className="leading-3 group-hover:text-green-500 w-5 h-5"
+              />
+            </div>
+
+            {/* Hamburger Button */}
+            <div className="ham-btn">
+              <img
+                src={hamBtn}
+                alt="Hamburger Icon"
+                className="w-5 cursor-pointer"
+              />
+            </div>
           </div>
 
-          {/* Profile Button */}
-          <div
-            id="profile-Btn"
-            className="flex flex-col items-center justify-center cursor-pointer group relative"
-          >
-            <img
-              src={ProfileImg}
-              alt="Profile Icon"
-              aria-label="Profile"
-              className="leading-3 group-hover:text-green-500 w-5 h-5"
-            />
-          </div>
-
-          {/* Hamburger Button */}
-          <div className="ham-btn">
-            <img
-              src={hamBtn}
-              alt="Hamburger Icon"
-              className="w-5 cursor-pointer"
-            />
-          </div>
-        </div>
-
-        {/* Nav Menu 
+          {/* Nav Menu 
         <div
           id="nav-menu"
           style={{ fontFamily: "Roboto, sans-serif" }}
@@ -116,7 +134,8 @@ const Navbar = () => {
             ))}
           </ul>
         </div> */}
-      </nav>
+        </nav>
+      )}
     </header>
   );
 };
