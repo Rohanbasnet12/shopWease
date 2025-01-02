@@ -73,7 +73,7 @@ const Collections = () => {
   return (
     <div
       id="collection"
-      className="px-3 md:px-8 lg:px-20 mb-16"
+      className="px-3 md:px-8 lg:px-20 mb-16 mt-20"
       style={{ fontFamily: `"Roboto", sans-serif` }}
     >
       <div

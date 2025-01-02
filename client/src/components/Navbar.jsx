@@ -163,7 +163,7 @@ const Navbar = () => {
                 {menuItems.map((menu, index) => (
                   <NavLink
                     key={index}
-                    to={`menu === "Home" ? "/" : /${menu.toLowerCase()}`}
+                    to={menu === "Home" ? "/" : `/${menu.toLowerCase()}`}
                     className="cursor-pointer m-4"
                     onClick={() => setVisible(false)} // Close sidebar on navigation
                   >

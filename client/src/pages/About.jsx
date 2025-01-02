@@ -3,7 +3,7 @@ import Title from "../components/Title";
 
 const About = () => {
   return (
-    <div>
+    <div id="about" className="mt-32">
       <Title
         title={"About"}
         description={
