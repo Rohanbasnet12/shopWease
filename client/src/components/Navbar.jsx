@@ -22,6 +22,22 @@ const Navbar = () => {
     setIsSearch(false);
   };
 
+  // Detect scrolling to close the menu
+  useEffect(() => {
+    const handleScroll = () => {
+      if (visible) {
+        setVisible(false); // Close the menu on scroll
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [visible]);
+
+  const handleMenuVisibilty = () => {
+    setVisible(true);
+  };
+
   useEffect(() => {
     const handleResize = () => {
       setIsWideScreen(window.innerWidth > 645);
@@ -32,12 +48,8 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleMenuVisibilty = () => {
-    setVisible(true);
-  };
-
   return (
-    <header className="overflow-hidden">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg">
       {isSearch ? (
         <div className="searchBar-wrapper py-6 px-7 flex items-center justify-between transition-all duration-700 ease-out relative ">
           <button
@@ -126,8 +138,12 @@ const Navbar = () => {
           {/* Nav Menu  */}
           <div
             id="mobile-view-menu"
-            className={`relative top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ease-out ${
-              visible ? "w-full h-[100vh]" : "w-0"
+            className={`fixed top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ease-out shadow-xl ${
+              visible
+                ? isWideScreen
+                  ? "w-[30%] h-[100vh]"
+                  : "w-[80vw] h-[100vh]"
+                : "w-0"
             }`}
           >
             <div className="close-btn">
@@ -143,7 +159,7 @@ const Navbar = () => {
             </div>
 
             <div className="menu-items-smallerWidth">
-              <ul className="flex flex-col items-start gap-4">
+              <ul className="flex flex-col items-start gap-1">
                 {menuItems.map((menu, index) => (
                   <NavLink
                     key={index}

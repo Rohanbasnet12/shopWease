@@ -50,12 +50,12 @@ const Hero = () => {
   return (
     <div
       id="hero"
-      className="w-full h-screen bg-[#B6A28E] pt-10"
+      className="w-full h-screen bg-[#B6A28E] pt-10 mt-20"
       style={{ fontFamily: `"Roboto", sans-serif` }}
     >
       <div className="hero-wrapper container mx-auto overflow-hidden relative sm:rounded-3xl lg:rounded-3xl xl:rounded-3xl">
         {/* {Image} */}
-        <div className="img_wrapper h-[80vh] w-full -mt-10 overflow-hidden">
+        <div className="img_wrapper h-[80vh] w-full -mt-10 overflow-hidden relative z-10">
           <img
             src={homeImg}
             alt="Background Home Image"
@@ -63,7 +63,7 @@ const Hero = () => {
           />
         </div>
 
-        <div className="info-wrapper w-full lg:px-10 md:p-6 xl:px-12 p-3 flex justify-between items-center absolute bottom-4">
+        <div className="info-wrapper w-full lg:px-10 md:p-6 xl:px-12 p-3 flex justify-between items-center absolute bottom-4 z-20">
           <div className="w-full flex flex-col items-start gap-4 justify-between sm:flex-row sm:items-end">
             <div
               className="shop-description-wrapper"
