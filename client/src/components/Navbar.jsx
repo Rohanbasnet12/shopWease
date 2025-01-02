@@ -32,7 +32,9 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleMenuVisibilty = () => {};
+  const handleMenuVisibilty = () => {
+    setVisible(true);
+  };
 
   return (
     <header className="overflow-hidden">
@@ -112,7 +114,7 @@ const Navbar = () => {
             </div>
 
             {/* Hamburger Button */}
-            <div className="ham-btn">
+            <div className="ham-btn" onClick={() => handleMenuVisibilty()}>
               <img
                 src={hamBtn}
                 alt="Hamburger Icon"
@@ -124,7 +126,7 @@ const Navbar = () => {
           {/* Nav Menu  */}
           <div
             id="mobile-view-menu"
-            className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ease-out ${
+            className={`relative top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ease-out ${
               visible ? "w-full h-[100vh]" : "w-0"
             }`}
           >
