@@ -3,6 +3,7 @@ import Title from "../components/Title";
 import { ShopContext } from "../context/ShopContext";
 import DropDownIcon from "../assets/frontend_assets/dropdown_icon.png";
 import ProductItem from "../components/ProductItem";
+import debounce from "lodash.debounce";
 
 const Collections = () => {
   const { products, search } = useContext(ShopContext);
