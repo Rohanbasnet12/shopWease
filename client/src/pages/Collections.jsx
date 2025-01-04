@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import Title from "../components/Title";
 import { ShopContext } from "../context/ShopContext";
 import DropDownIcon from "../assets/frontend_assets/dropdown_icon.png";
@@ -28,6 +28,11 @@ const Collections = () => {
         : [...prev, e.target.value]
     );
   };
+
+  // Debounced filter function
+  const debouncedFilter = useMemo(() => {
+    return debounce(() => applyFilter(), 400);
+  }, [category, subCategory, search, products]);
 
   const applyFilter = () => {
     let filtered = [...products];
@@ -69,10 +74,12 @@ const Collections = () => {
     setFilteredProducts(sorted);
   };
 
+  // Apply debounced filter when category, subCategory, or search changes
   useEffect(() => {
-    applyFilter();
-  }, [category, subCategory, products, search]);
+    debouncedFilter();
+  }, [category, subCategory, search, products, debouncedFilter]);
 
+  // Apply sort when sortType changes
   useEffect(() => {
     sortProduct();
   }, [sortType]);
