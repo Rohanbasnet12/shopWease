@@ -12,6 +12,17 @@ const Collections = () => {
   const [subCategory, setSubCategory] = useState([]);
   const [sortType, setSortType] = useState("relevant");
 
+  // Debounce search term
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearch(search);
+    }, 30000); // 300ms debounce interval
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [search]);
+
   const toggleCategory = (e) => {
     setCategory((prev) =>
       prev.includes(e.target.value)
