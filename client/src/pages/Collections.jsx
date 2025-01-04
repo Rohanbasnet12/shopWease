@@ -5,7 +5,7 @@ import DropDownIcon from "../assets/frontend_assets/dropdown_icon.png";
 import ProductItem from "../components/ProductItem";
 
 const Collections = () => {
-  const { products } = useContext(ShopContext);
+  const { products, search } = useContext(ShopContext);
   const [showFilter, setShowFilter] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [category, setCategory] = useState([]);
@@ -41,6 +41,12 @@ const Collections = () => {
       );
     }
 
+    if (search) {
+      filtered = filtered.filter((item) =>
+        item.name.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+
     setFilteredProducts(filtered);
   };
 
@@ -64,7 +70,7 @@ const Collections = () => {
 
   useEffect(() => {
     applyFilter();
-  }, [category, subCategory, products]);
+  }, [category, subCategory, products, search]);
 
   useEffect(() => {
     sortProduct();
