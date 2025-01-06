@@ -1,10 +1,12 @@
 import { useState, useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const { search, setSearch } = useContext(ShopContext);
   const [isClear, setIsClear] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -15,7 +17,7 @@ const SearchBar = () => {
 
     // Redirect to /collection if not already there
     if (location.pathname !== "/collections") {
-      Navigate(`/collection?search=${encodeURIComponent(value)}`);
+      navigate(`/collections?search=${encodeURIComponent(value)}`);
     }
   };
 
