@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
+import { Navigate } from "react-router-dom";
 
 const SearchBar = () => {
   const { search, setSearch } = useContext(ShopContext);
@@ -11,6 +12,11 @@ const SearchBar = () => {
 
     // Show or hide the clear button based on input length
     setIsClear(value.length > 0);
+
+    // Redirect to /collection if not already there
+    if (location.pathname !== "/collections") {
+      Navigate(`/collection?search=${encodeURIComponent(value)}`);
+    }
   };
 
   const clearInput = () => {

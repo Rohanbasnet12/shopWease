@@ -31,7 +31,7 @@ const Collections = () => {
 
   // Debounced filter function
   const debouncedFilter = useMemo(() => {
-    return debounce(() => applyFilter(), 400);
+    return debounce(() => applyFilter(), 200);
   }, [category, subCategory, search, products]);
 
   const applyFilter = () => {
@@ -123,6 +123,7 @@ const Collections = () => {
                   className="w-3"
                   value={"Men"}
                   onChange={toggleCategory}
+                  aria-label="Filter by Men"
                 />
                 Men
               </p>
@@ -132,6 +133,7 @@ const Collections = () => {
                   className="w-3"
                   value={"Women"}
                   onChange={toggleCategory}
+                  aria-label="Filter by Women"
                 />
                 Women
               </p>
@@ -141,6 +143,7 @@ const Collections = () => {
                   className="w-3"
                   value={"Kids"}
                   onChange={toggleCategory}
+                  aria-label="Filter by Kid"
                 />
                 Kids
               </p>
@@ -195,7 +198,7 @@ const Collections = () => {
               }}
               className="border-2 border-gray-300 text-sm px-2 h-10 my-10"
             >
-              <option value="relavent">Sort by: Relavent</option>
+              <option value="relevant">Sort by: Relevance</option>
               <option value="low-high">Sort by: Low to High</option>
               <option value="high-low">Sort by: High to Low</option>
             </select>
