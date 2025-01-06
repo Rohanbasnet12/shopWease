@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  console.log(currentYear);
   return (
     <section
       id="footer"

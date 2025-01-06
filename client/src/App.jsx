@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import PlaceOrder from "./pages/PlaceOrder";
 import Orders from "./pages/Orders";
 import { Routes, Route } from "react-router-dom";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -21,10 +22,11 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/products/:producId" element={<Product />} />
+        <Route path="/products/:productId" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/orders" element={<Orders />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
   );
