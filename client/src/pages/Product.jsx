@@ -15,13 +15,11 @@ const Product = () => {
   const [image, setImage] = useState("");
 
   const fetchProductData = async () => {
-    products.map((item) => {
-      if (item._id === productId) {
-        setProductData(item);
-        setImage(item.image[0]);
-        return null;
-      }
-    });
+    const product = products.find((item) => item._id === productId);
+    if (product) {
+      setProductData(product);
+      setImage(product.image[0]);
+    }
   };
 
   useEffect(() => {
@@ -44,12 +42,14 @@ const Product = () => {
           <div className="flex-1 flex flex-col-reverse gap-3 sm:flex-row">
             <div className="flex flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full">
               {productData.image.map((item, index) => {
-                <img
-                  src={item}
-                  key={index}
-                  className="w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer"
-                  alt="Product Image"
-                ></img>;
+                return (
+                  <img
+                    src={item}
+                    key={index}
+                    className="w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer"
+                    alt="Product Image"
+                  />
+                );
               })}
             </div>
           </div>
