@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import starIcon from "../assets/frontend_assets/star_icon.png";
 import starDullIcon from "../assets/frontend_assets/star_dull_icon.png";
+import "../styles/Product.css";
 
 const Product = () => {
   // Fetching productID
@@ -14,6 +15,7 @@ const Product = () => {
   // UseState
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState("");
+  const [size, setSize] = useState("");
 
   const fetchProductData = async () => {
     const product = products.find((item) => item._id === productId);
@@ -41,7 +43,7 @@ const Product = () => {
         <div className="flex gap-12 sm:gap-12 flex-col sm:flex-row">
           {/* Product Image */}
           <div className="flex-1 flex flex-col-reverse gap-3 sm:flex-row">
-            <div className="flex flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full">
+            <div className="flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full">
               {productData.image.map((item, index) => {
                 return (
                   <img
@@ -74,6 +76,34 @@ const Product = () => {
               {currency}
               {productData.price}
             </p>
+            <p className="mt-5 text-gray-500 md:w-4/5">
+              {productData.description}
+            </p>
+            <div className="flex flex-col gap-4 my-8">
+              <p>Select Size</p>
+              <div className="flex gap-2">
+                {productData.sizes.map((item, index) => (
+                  <button
+                    onClick={() => setSize(item)}
+                    className={`border rounded-md py-2 px-4 bg-gray-100 ${
+                      item === size ? "border-orange-500" : ""
+                    }`}
+                    key={index}
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <button className="uppercase bg-black text-white py-3 px-8 rounded-sm text-sm active:bg-gray-700">
+              Add to cart
+            </button>
+            <hr className="mt-6 sm:w-4/5" />
+            <div className="text-sm text-gray-500 mt-5 flex flex-col gap-2">
+              <p>100% Original product.</p>
+              <p>Cash on delivery is available on this product.</p>
+              <p>Easy return and exchange policy within 7 days.</p>
+            </div>
           </div>
         </div>
       </div>
