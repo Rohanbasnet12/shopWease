@@ -4,6 +4,7 @@ import { ShopContext } from "../context/ShopContext";
 import starIcon from "../assets/frontend_assets/star_icon.png";
 import starDullIcon from "../assets/frontend_assets/star_dull_icon.png";
 import "../styles/Product.css";
+import RelatedProducts from "../components/RelatedProducts";
 
 const Product = () => {
   // Fetching productID
@@ -131,6 +132,12 @@ const Product = () => {
             </p>
           </div>
         </div>
+
+        {/* Display related products */}
+        <RelatedProducts
+          category={productData.category}
+          subCategory={productData.subCategory}
+        />
       </div>
     </div>
   ) : (
