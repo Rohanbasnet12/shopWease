@@ -11,7 +11,7 @@ const Product = () => {
   const { productId } = useParams();
 
   // Fetching all the products from shopContext
-  const { products, currency } = useContext(ShopContext);
+  const { products, currency, addToCart } = useContext(ShopContext);
   const navigate = useNavigate();
 
   // UseState
@@ -105,7 +105,10 @@ const Product = () => {
                 ))}
               </div>
             </div>
-            <button className="uppercase bg-black text-white py-3 px-8 rounded-sm text-sm active:bg-gray-700">
+            <button
+              onClick={() => addToCard(productData._id, size)}
+              className="uppercase bg-black text-white py-3 px-8 rounded-sm text-sm active:bg-gray-700"
+            >
               Add to cart
             </button>
             <hr className="mt-6 sm:w-4/5" />
