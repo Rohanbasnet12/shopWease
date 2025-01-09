@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import starIcon from "../assets/frontend_assets/star_icon.png";
 import starDullIcon from "../assets/frontend_assets/star_dull_icon.png";
@@ -12,6 +12,7 @@ const Product = () => {
 
   // Fetching all the products from shopContext
   const { products, currency } = useContext(ShopContext);
+  const navigate = useNavigate();
 
   // UseState
   const [productData, setProductData] = useState(false);
@@ -25,6 +26,14 @@ const Product = () => {
       setImage(product.image[0]);
     }
   };
+
+  useEffect(() => {
+    const productExist = products.some((product) => product._id === productId);
+
+    if (!productExist) {
+      navigate("/404");
+    }
+  }, [productId, products, navigate]);
 
   useEffect(() => {
     fetchProductData();
